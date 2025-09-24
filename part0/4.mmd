@@ -4,8 +4,10 @@ sequenceDiagram
 
     browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
     activate server
-    server-->>browser: instructs redirect to /exampleapp/notes
+    server-->>browser: Status 302: redirect to address defined in the header's Location
     deactivate server
+
+    Note right of browser: instructs redirect to /exampleapp/notes
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
     activate server
